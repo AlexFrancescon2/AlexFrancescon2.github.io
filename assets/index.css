@@ -1,0 +1,111 @@
+body {
+    background-color: #f2f2f2 !important;
+}
+
+header {
+    background-color: #36a8be;
+    color: white;
+    padding: 20px 32px 20px 32px;
+}
+
+h4 {
+    color: #36a8be;
+}
+
+.custom-container {
+    margin: 30px;
+    max-width: 100vw;
+}
+
+.card-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: all ease-in-out .2s;
+    height: 100%;
+    position: relative;
+}
+
+.card-content:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 8px;
+}
+
+.form-group label {
+    font-size: small;
+    margin-bottom: 3px;
+}
+
+.content-not-ready {
+    font-style: italic;
+    text-align: center;
+    font-size: 18px;
+    color: #acacac;
+}
+
+.form-check {
+    margin-bottom: 10px;
+}
+
+.form-check label {
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    margin-right: 6px;
+}
+
+.btn-custom {
+    background-color: transparent !important;
+    border: 2px solid #36a8be !important;
+    border-radius: 30px !important;
+    padding: 10px 15px 10px 15px !important;
+    color: #36a8be !important;
+}
+
+.btn-custom:not(.disabled):hover {
+    background-color: #36a8be !important;
+    color: #fff !important;
+}
+
+.btn-custom-danger {
+    background-color: transparent !important;
+    border: 2px solid #850b0b !important;
+    border-radius: 30px !important;
+    padding: 10px 15px 10px 15px !important;
+    color: #850b0b !important;
+}
+
+.btn-custom-danger:hover {
+    background-color: #850b0b !important;
+    color: #fff !important;
+}
+
+#poll {
+    min-height: 60VH !important;
+    width: 100% !important;
+}
+
+.logoName {
+    font-size: 30px;
+    margin-left: 12px;
+}
+
+.modal-header {
+    border-bottom: none !important;
+}
+
+.modal-footer {
+    border-top: none !important;
+}
+
+.error {
+    color: red;
+    font-size: small;
+    font-style: italic;
+    display: block;
+}
+
+.disabled {
+    cursor: not-allowed !important;
+}

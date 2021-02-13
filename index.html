@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Poll bot</title>
+
+    <!-- imports -->
+    <link rel="stylesheet" href="assets/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="assets/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="d-flex justify-content-between">
+            <div class="logo d-flex align-items-center">
+                <svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.68 125.6" height="40px">
+                    <defs>
+                        <style>.cls-1{fill:#fff;stroke:#fff;stroke-miterlimit:10;}
+                        </style>
+                    </defs>
+                    <circle class="cls-1" cx="16.84" cy="16.84" r="16.34"/>
+                    <circle class="cls-1" cx="16.84" cy="62.8" r="16.34"/>
+                    <circle class="cls-1" cx="16.84" cy="108.76" r="16.34"/>
+                </svg>
+                <span class="logoName">VoteBot</span>
+            </div>
+            <button class="btn btn-primary" id="simulate">
+                Simulate
+            </button>
+        </div>
+    </header>
+
+    <div class="custom-container">
+        <div class="row custom-container d-flex justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4  mb-4 mb-lg-0">
+                <div class="card-content">
+                    <h4>Handle your poll</h4>
+                    <p>Add, edit or remove the questions! Max 10 answers.</p>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text" name="title" id="title" class="form-control"
+                                    placeholder="Add the title here" maxlength="80">
+                            </div> <!-- .form-group -->
+                        </div> <!-- .col -->
+                    </div> <!-- .row -->
+
+                    <div class="row my-4">
+                        <div class="col-12">
+                            <p class="font-weight-bold mb-1">Possible answers  (<span id="answersCounter">0</span>/10): </p>
+                            <div class="row owner-questions">
+                                <div class="col-12">
+                                    <p class="font-weight-italic mb-0 small">
+                                        You have no answers yet. Add an answer from the input below!
+                                    </p>
+                                </div> <!-- .col -->
+                            </div> <!-- .row -->
+                        </div> <!-- .col -->
+                    </div> <!-- .row -->
+
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <label for="addAnswer">Answers</label>
+                            <div class="input-group mb-3">
+                                <input type="text" name="addAnswer" id="addAnswer" class="form-control form-control-sm"
+                                    placeholder="Type an answer in here!" maxlength="80">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary btn-sm disabled" type="button"
+                                        id="addAnswerButton" disabled>Add</button>
+                                </div> <!-- .input-group-append -->
+                            </div> <!-- .input-group -->
+                        </div> <!-- .col -->
+                    </div> <!-- .row -->
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-end">
+                            <button class="btn btn-custom-danger btn-sm" id="reset">
+                                Reset
+                            </button>
+                        </div> <!-- .col -->
+                    </div> <!-- .row -->
+
+                </div> <!-- .card-content -->
+            </div> <!-- .col -->
+            <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                <div class="card-content">
+                    <h4 class="mb-4">Answer the question</h4>
+                    <div class="answers dynamic-content d-none">
+                        <h5 class="mb-3 questionTitle"></h5>
+                        <div class="row questions-radio-wrapper">
+
+                        </div> <!-- .row -->
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-custom disabled" id="vote" disabled>
+                                Vote
+                            </button>
+                        </div> <!-- .d-flex -->
+                    </div>
+                    <p class="content-not-ready answers mb-1">
+                        The question is not ready yet!
+                    </p>
+                </div> <!-- .card-content -->
+            </div> <!-- .col -->
+            <div class="col-12 col-lg-4">
+                <div class="card-content">
+                    <h4 class="mb-4">Observe the results</h4>
+                    <div class="poll dynamic-content d-none">
+                        <h5 class="mb-3 questionTitle"></h5>
+                        <div class="row">
+                            <div class="col-12 poll-wrapper">
+                                <canvas id="poll"></canvas>
+                            </div> <!-- .col -->
+                        </div> <!-- .row -->
+                    </div>
+                    <p class="content-not-ready poll mb-1">The poll is not ready yet!</p>
+                </div> <!-- .card-content -->
+            </div> <!-- .col -->
+        </div> <!-- .row -->
+    </div> <!-- .custom-container -->
+    <div id="popup-container">
+
+    </div>
+
+</body>
+
+</html>
