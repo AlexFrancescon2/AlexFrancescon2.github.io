@@ -10,7 +10,7 @@ A Demo can be reached [through this link](https://alexfrancescon2.github.io/).
 
 This project has been developed with the goal of following the requests indicated in the assigment as best as possible, making up assuptions when necessary.
 
-The app has been developed with HTML, CSS and JavaScript.
+The app has been developed with HTML, CSS and JavaScript; for the pure pleasure of coding, though I am still currently learning through some courses the following technologies, this app has beed developed in a second version using Angular and Typescript. For illustrative purposes only, the repository is reachable from [here](https://github.com/AlexFrancescon2/votebot-ang).
 
 ### Assumptions and instructions
 On first load, the app will show an **header** and **three different sections**, two of them empty. 
