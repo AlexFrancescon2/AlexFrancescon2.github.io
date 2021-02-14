@@ -17,6 +17,7 @@ class AnsweredQuestions {
 // Init variables
 var title = '';
 var answers = [];
+var answerProgressiveId = 1;
 var answeredQuestions = [];
 var chart;
 var chartIsActive = false;
@@ -98,7 +99,8 @@ function addNewAnswer() {
         popup(title, content, false);
         return false;
     }
-    answers.push(new Answer(answersCount+1, value));
+    answers.push(new Answer(answerProgressiveId, value));
+    answerProgressiveId++;
 
     // generate answers in the dom
     generateAnswersInDom();
@@ -111,7 +113,6 @@ function addNewAnswer() {
 
     // Clean input And focus
     $('#addAnswerButton').attr('disabled', true).addClass('disabled');
-    console.log('dentro');
     $('#addAnswer').val('').focus();
     
 
